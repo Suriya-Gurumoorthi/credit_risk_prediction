@@ -1,4 +1,10 @@
 pandas
 numpy
 seaborn
+notebook
+numpy
+scikit-learn
+matplotlib
+Flask
+Flask-Cors
 -e .
