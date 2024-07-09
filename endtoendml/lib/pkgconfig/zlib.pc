@@ -1,0 +1,13 @@
+prefix=/Users/suriyag/Documents/end2endml/credit_risk_prediction/endtoendml
+exec_prefix=/Users/suriyag/Documents/end2endml/credit_risk_prediction/endtoendml
+libdir=/Users/suriyag/Documents/end2endml/credit_risk_prediction/endtoendml/lib
+sharedlibdir=/Users/suriyag/Documents/end2endml/credit_risk_prediction/endtoendml/lib
+includedir=/Users/suriyag/Documents/end2endml/credit_risk_prediction/endtoendml/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
