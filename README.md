@@ -1,1 +1,1 @@
-# Credir Risk Prediction
+# Credit Risk Prediction
