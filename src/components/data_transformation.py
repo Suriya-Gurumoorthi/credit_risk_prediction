@@ -6,7 +6,7 @@ import numpy as np
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder,StandardScaler
+from sklearn.preprocessing import OrdinalEncoder,StandardScaler
 
 from src.exception import CustomException
 from src.logger import logging
@@ -24,48 +24,6 @@ class DataTransformation:
     def __init__(self):
         self.data_transformation_config = DataTransformationConfig()
 
-    def get_data_transformer_object(self):
-        try:
-            numerical_columns = [
-                'status',
-                'duration',
-                'credit_history',
-                'purpose',
-                'amount',
-                'savings',
-                'employment_duration',
-                'installment_rate',
-                'personal_status_sex',
-                'other_debtors',
-                'present_residence',
-                'property',
-                'age',
-                'other_installment_plans',
-                'housing',
-                'number_credits',
-                'job',
-                'people_liable',
-                'telephone',
-                'foreign_worker',
-                'credit_risk'
-            ]
-            categorical_columns = []
-            num_pipeline = Pipeline(
-                steps=[
-                    ("imputer",SimpleImputer(strategy="median")),
-                    ("scaler",StandardScaler())
-                ]
-            )
-            logging.info("Scaling and transformation completed")
-            preprocessor = ColumnTransformer(
-                [
-                    ("num_pipeline",num_pipeline,numerical_columns)
-                ]
-            )
-            return preprocessor
-        except Exception as e:
-            raise CustomException(e,sys)
-        
 
     def initiate_data_transformation(self,train_path,test_path):
 
@@ -115,3 +73,56 @@ class DataTransformation:
             )
         except Exception as e:
             raise CustomException(e,sys)
+        
+    def get_data_transformer_object(self):
+        try:
+            numerical_columns = [
+                'status',
+                'duration',
+                'credit_history',
+                'purpose',
+                'amount',
+                'savings',
+                'employment_duration',
+                'installment_rate',
+                'personal_status_sex',
+                'other_debtors',
+                'present_residence',
+                'property',
+                'age',
+                'other_installment_plans',
+                'housing',
+                'number_credits',
+                'job',
+                'people_liable',
+                'telephone',
+                'foreign_worker'
+            ]
+            categorical_columns = []
+            num_pipeline = Pipeline(
+                steps=[
+                    ("imputer",SimpleImputer(strategy="median")),
+                    ("scaler",StandardScaler())
+                ]
+            )
+            cat_pipeline=Pipeline(
+
+                steps=[
+                ("imputer",SimpleImputer(strategy="most_frequent")),
+                ("Ordinal",OrdinalEncoder()),
+                ("scaler",StandardScaler(with_mean=False))
+                ]
+
+            )
+
+            logging.info("Scaling and transformation completed")
+            preprocessor = ColumnTransformer(
+                transformers=[
+                    ("num_pipeline",num_pipeline,numerical_columns),
+                    ("cat_pipelines",cat_pipeline,categorical_columns)
+                ]
+            )
+            return preprocessor
+        except Exception as e:
+            raise CustomException(e,sys)
+        
