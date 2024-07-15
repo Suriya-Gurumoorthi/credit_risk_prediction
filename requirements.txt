@@ -8,4 +8,5 @@ matplotlib
 Flask
 dill
 Flask-Cors
+xgboost
 -e .
