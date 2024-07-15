@@ -1,4 +1,4 @@
-laufkont,laufzeit,moral,verw,hoehe,sparkont,beszeit,rate,famges,buerge,wohnzeit,verm,alter,weitkred,wohn,bishkred,beruf,pers,telef,gastarb,kredit
+status,duration,credit_history,purpose,amount,savings,employment_duration,installment_rate,personal_status_sex,other_debtors,present_residence,property,age,other_installment_plans,housing,number_credits,job,people_liable,telephone,foreign_worker,credit_risk
 4,36,2,2,10974,1,1,4,2,1,2,3,26,3,2,2,4,2,2,2,0
 4,18,4,3,1149,4,3,4,3,1,3,1,46,3,2,2,3,2,1,2,1
 4,12,2,2,1736,1,4,3,2,1,4,1,31,3,2,1,2,2,1,2,1
