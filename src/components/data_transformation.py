@@ -14,7 +14,7 @@ from src.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path = os.path.join('articact',"preprocessor.pkl")
+    preprocessor_obj_file_path = os.path.join('artifact',"preprocessor.pkl")
 
 def validate_columns(df, columns):
         missing_columns = [col for col in columns if col not in df.columns]
