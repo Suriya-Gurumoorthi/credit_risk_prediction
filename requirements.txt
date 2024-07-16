@@ -9,4 +9,5 @@ Flask
 dill
 Flask-Cors
 xgboost
+streamlit
 -e .
