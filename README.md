@@ -30,6 +30,9 @@ Follow these steps to run the app locally:
     ```bash
     streamlit run app.py
     ```
+## 🛠️ Link to deployed app
+ -> https://german-credit-risk-prediction.streamlit.app
+
 
 ## 🔍 About the Project
 
