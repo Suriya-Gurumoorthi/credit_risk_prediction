@@ -35,6 +35,10 @@ Follow these steps to run the app locally:
 
 This project is designed to help financial institutions and individuals assess credit risk efficiently. It utilizes a robust machine learning model trained on extensive historical data, ensuring accurate and reliable predictions. The user-friendly interface makes it accessible for users with varying levels of technical expertise.
 
+## Dataset Source
+
+South German Credit. (2019). UCI Machine Learning Repository. https://doi.org/10.24432/C5X89F.
+
 ## 🤝 Contributing
 
 Contributions are welcome! Fork the repository, make changes, and submit a pull request. Open an issue for major changes.
